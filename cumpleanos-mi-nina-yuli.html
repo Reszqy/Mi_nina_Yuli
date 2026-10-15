@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff0f5">
+  <title>Feliz cumpleaños, Mi niña YULI ❤️</title>
+  <style>
+    :root {
+      --rose: #e75480;
+      --deep: #8f214d;
+      --pink: #fff0f5;
+      --cream: #fffaf7;
+      --ink: #51283b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 15% 12%, rgba(255,255,255,.95), transparent 28%),
+        radial-gradient(circle at 85% 25%, rgba(255,205,224,.65), transparent 30%),
+        linear-gradient(145deg, #fff4f7, #ffe0eb 55%, #fff8f3);
+      overflow-x: hidden;
+    }
+    .wrap { width: min(760px, 92vw); margin: 0 auto; padding: 28px 0 46px; position: relative; }
+    .topline { text-align: center; letter-spacing: .15em; text-transform: uppercase; font: 700 11px/1.6 system-ui, sans-serif; color: #a34b70; }
+    .hero {
+      text-align: center; padding: 30px 18px 26px; margin-top: 14px;
+      border: 1px solid rgba(231,84,128,.2); border-radius: 28px;
+      background: rgba(255,255,255,.7); box-shadow: 0 18px 55px rgba(143,33,77,.11);
+      backdrop-filter: blur(8px);
+    }
+    .crown { font-size: 30px; margin-bottom: 7px; }
+    h1 { font-size: clamp(35px, 8vw, 62px); line-height: 1.03; color: var(--deep); margin: 8px 0 14px; font-weight: 500; }
+    .subtitle { font: 16px/1.7 system-ui, sans-serif; max-width: 530px; margin: 0 auto; }
+    .date { display: inline-block; margin-top: 20px; padding: 9px 15px; border-radius: 999px; background: #ffe2ec; color: #8f214d; font: 700 13px system-ui, sans-serif; }
+    .buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 20px 0 0; }
+    button {
+      border: 0; border-radius: 999px; padding: 12px 18px; cursor: pointer;
+      background: var(--rose); color: white; font: 700 14px system-ui, sans-serif;
+      box-shadow: 0 7px 18px rgba(231,84,128,.22); transition: transform .18s, filter .18s;
+    }
+    button:hover { transform: translateY(-2px); filter: brightness(1.03); }
+    button.secondary { background: white; color: var(--deep); border: 1px solid #f2bfd1; box-shadow: none; }
+    .card {
+      background: rgba(255,255,255,.78); border: 1px solid rgba(231,84,128,.16);
+      border-radius: 22px; padding: 23px; margin-top: 18px; box-shadow: 0 10px 30px rgba(143,33,77,.07);
+    }
+    h2 { color: var(--deep); font-size: 25px; margin: 0 0 12px; font-weight: 500; }
+    p { font-size: 16px; line-height: 1.8; margin: 10px 0; }
+    .translation { color: #88566b; font: italic 14px/1.7 system-ui, sans-serif; border-left: 3px solid #f1aac4; padding-left: 12px; margin-top: 13px; }
+    .letter { display: none; animation: rise .55s ease both; }
+    .letter.open { display: block; }
+    .surprise { display: none; text-align: center; padding-top: 10px; animation: rise .6s ease both; }
+    .surprise.open { display: block; }
+    .big-heart { font-size: 56px; animation: pulse 1.2s infinite; display: inline-block; }
+    footer { text-align: center; color: #a35a78; font: 12px/1.8 system-ui, sans-serif; padding: 25px 12px 0; }
+    .floating-heart {
+      position: fixed; bottom: -35px; z-index: -1; pointer-events: none;
+      animation: floatUp linear forwards; opacity: .68;
+    }
+    .small-note { font: 12px/1.6 system-ui, sans-serif; color: #96677b; text-align: center; margin-top: 12px; }
+    @keyframes floatUp { from { transform: translateY(0) rotate(0deg); opacity: 0; } 12% { opacity: .72; } to { transform: translateY(-115vh) rotate(28deg); opacity: 0; } }
+    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+    @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="topline">Una pequeña sorpresa hecha con cariño · Una pequeña sorpresa hecha con cariño</div>
+    <section class="hero">
+      <div class="crown">👑 🌷 👑</div>
+      <h1>Feliz cumpleaños,<br>Mi niña YULI</h1>
+      <p class="subtitle">Hoy el mundo celebra que llegaste a él… y yo celebro la suerte de tenerte en mi vida. 💗</p>
+      <div class="date">01 · 11 · 2026</div>
+      <div class="buttons">
+        <button id="openLetter">💌 Abrir mi cartita</button>
+        <button class="secondary" id="musicButton" aria-pressed="false">🎵 Activar música</button>
+        <button class="secondary" id="surpriseButton">🎁 Sorpresita</button>
+      </div>
+      <div class="small-note">Si la música no parte al tiro, toca el botón otra vez. 💕</div>
+    </section>
+
+    <section class="card letter" id="letter" aria-live="polite">
+      <h2>Para ti, mi niña preciosa ❤️</h2>
+      <p>Feliz cumpleaños, mi niña YULI. 🥹💗</p>
+      <p>Ojalá hoy te regaloneen muchísimo, te llenen de abrazos y te saquen mil sonrisas. Te mereces puras cosas bonitas, porque tienes una forma muy especial de hacer que mis días sean más lindos.</p>
+      <p>Aunque a veces nos separen los kilómetros y la diferencia de horario, quiero que sepas que me acuerdo de ti con mucho cariño. Me encantaría poder darte un abrazo apretadito y decirte en persona lo importante que eres para mí.</p>
+      <p>Que este nuevo añito de vida venga lleno de salud, tranquilidad, sueños cumplidos y momentos que te hagan feliz. Nunca olvides lo valiosa y especial que eres, ¿ya?</p>
+      <p>Gracias por estar en mi vida, mi niña. Hoy y siempre deseo verte sonreír. Feliz cumpleaños, preciosa. Te mando un abrazo gigante hasta Chile. 🇨🇱💞</p>
+      <p><strong>Con mucho cariño, para mi YULI. 💋</strong></p>
+      <div class="translation">
+        <strong>Terjemahan Indonesia:</strong><br>
+        Selamat ulang tahun, YULI sayang. Semoga hari ini kamu dimanja, mendapat banyak pelukan, dan tersenyum berkali-kali. Kamu pantas mendapatkan hal-hal indah karena kamu punya cara istimewa untuk membuat hari-hariku lebih menyenangkan.<br><br>
+        Walaupun jarak dan perbedaan waktu memisahkan kita, aku selalu mengingatmu dengan penuh kasih. Aku ingin sekali memelukmu erat dan mengatakan langsung betapa berartinya dirimu bagiku.<br><br>
+        Semoga tahun barumu dipenuhi kesehatan, ketenangan, impian yang terwujud, dan momen-momen yang membuatmu bahagia. Jangan pernah lupa betapa berharganya dirimu. Terima kasih sudah hadir dalam hidupku. Aku mengirim pelukan besar sampai ke Chile. Selamat ulang tahun, sayang. ❤️
+      </div>
+    </section>
+
+    <section class="card surprise" id="surprise" aria-live="polite">
+      <div class="big-heart">💖</div>
+      <h2>¡Una cosita más, mi niña!</h2>
+      <p>Si pudiera pedir un deseo por tu cumpleaños, sería que la vida te cuide bonito, que nunca te falten motivos para sonreír y que podamos seguir creando recuerdos lindos juntos. 🥹</p>
+      <p><strong>Feliz cumple, YULI. Eres una personita muy especial para mí. ❤️</strong></p>
+      <div class="translation"><strong>Terjemahan Indonesia:</strong><br>Kalau aku boleh meminta satu harapan untuk ulang tahunmu, aku ingin hidup selalu menjagamu dengan baik, semoga kamu selalu punya alasan untuk tersenyum, dan semoga kita terus membuat kenangan indah bersama. Kamu sangat spesial bagiku. ❤️</div>
+    </section>
+
+    <section class="card">
+      <h2>Un deseo para ti ✨</h2>
+      <p style="text-align:center">Que la vida te regale tanta felicidad como la que tú mereces. 🌙🌹</p>
+      <div class="translation">Semoga hidup memberimu kebahagiaan sebanyak yang pantas kamu dapatkan.</div>
+    </section>
+
+    <footer>Hecho con cariño, especialmente para Mi niña YULI · 01.11.2026 💗<br>Un abrazo hasta Chile 🇨🇱</footer>
+  </main>
+
+  <script>
+    const letter = document.getElementById('letter');
+    const surprise = document.getElementById('surprise');
+    document.getElementById('openLetter').addEventListener('click', () => {
+      letter.classList.toggle('open');
+      if (letter.classList.contains('open')) letter.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    document.getElementById('surpriseButton').addEventListener('click', () => {
+      surprise.classList.toggle('open');
+      if (surprise.classList.contains('open')) surprise.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      burstHearts(14);
+    });
+
+    // Musik lembut dibuat langsung di browser, jadi tidak butuh file musik atau layanan berbayar.
+    // Browser biasanya meminta pengguna menekan tombol sebelum audio dimainkan.
+    let audioCtx = null, melodyTimer = null, noteIndex = 0;
+    const notes = [523.25, 659.25, 783.99, 659.25, 587.33, 698.46, 880, 698.46];
+    const musicButton = document.getElementById('musicButton');
+    function playNote(freq, start) {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.0001, start);
+      gain.gain.exponentialRampToValueAtTime(0.055, start + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.42);
+      osc.connect(gain); gain.connect(audioCtx.destination);
+      osc.start(start); osc.stop(start + 0.45);
+    }
+    musicButton.addEventListener('click', async () => {
+      if (melodyTimer) {
+        clearInterval(melodyTimer); melodyTimer = null;
+        musicButton.textContent = '🎵 Activar música';
+        musicButton.setAttribute('aria-pressed', 'false');
+        if (audioCtx && audioCtx.state === 'running') await audioCtx.suspend();
+        return;
+      }
+      try {
+        audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+        await audioCtx.resume();
+        playNote(notes[noteIndex++ % notes.length], audioCtx.currentTime);
+        melodyTimer = setInterval(() => {
+          if (audioCtx && audioCtx.state === 'running') {
+            playNote(notes[noteIndex++ % notes.length], audioCtx.currentTime);
+          }
+        }, 480);
+        musicButton.textContent = '⏸ Detener música';
+        musicButton.setAttribute('aria-pressed', 'true');
+      } catch (e) {
+        musicButton.textContent = 'No se pudo reproducir';
+      }
+    });
+
+    function burstHearts(count) {
+      const symbols = ['💗','💕','💖','💘','🌸'];
+      for (let i = 0; i < count; i++) {
+        const heart = document.createElement('span');
+        heart.className = 'floating-heart';
+        heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.fontSize = (16 + Math.random() * 22) + 'px';
+        heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 8500);
+      }
+    }
+    setInterval(() => {
+      const heart = document.createElement('span');
+      heart.className = 'floating-heart';
+      heart.textContent = Math.random() > .25 ? '♡' : '💗';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.fontSize = (15 + Math.random() * 18) + 'px';
+      heart.style.animationDuration = (7 + Math.random() * 5) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 12500);
+    }, 950);
+  </script>
+</body>
+</html>
